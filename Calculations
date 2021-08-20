@@ -1,0 +1,44 @@
+Main Class
+package homework;
+import javax.swing.JOptionPane;
+public class Homework {
+public static void main(String[] args) {
+String InputString;
+Double UserRadius;
+InputString = JOptionPane.showInputDialog("Input Circle Radius");
+UserRadius = Double.parseDouble(InputString);
+Sphere Sphere1 = new Sphere(UserRadius);
+JOptionPane.showMessageDialog(null, "Diameter:" + Sphere1.GetDiameter() + "\nCircumference:" + Sphere1.GetCircumference() + 
+"\nSurfaceArea:" + Sphere1.GetSurfaceArea() + "\nVolume:" + Sphere1.GetVolume());
+System.exit(0);
+}
+}
+Sub Class
+package homework;
+public class Sphere {
+private double Radius;
+public Sphere(double RadiusGiven){
+Radius = RadiusGiven;   
+}
+public double GetRadius(){
+return Radius;    
+}
+public double GetDiameter(){
+return Radius * 2;
+}
+public double GetCircumference(){
+return 2 * Math.PI * Radius;
+}
+public double GetSurfaceArea(){
+return 4 * Math.PI * Math.pow(Radius, 2);
+}
+public double GetVolume(){
+return (4.0/3.0) * Math.PI * Math.pow(Radius, 3);
+}
+public void SetRadius(double RadiusGiven){
+Radius = RadiusGiven;
+}
+public Sphere(){
+Radius = 0.0;  
+}
+}
